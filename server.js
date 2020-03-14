@@ -16,9 +16,10 @@ app.use(bodyParser.json());
 // app.use(flash());
 // app.use(CustomMware.setFlash);
 
+//requiring the routes
 app.use('/', require('./api/routes/productsRoutes'));
 
-
+//running the express server
 app.listen(port, function(err){
     if(err){
         console.log('Error in running the server: ',err);

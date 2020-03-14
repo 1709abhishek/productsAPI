@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-
+//product schema containing name and quantity as variables
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -14,4 +14,5 @@ const productSchema = new mongoose.Schema({
     timestamps: true
 });
 
+//exporting the schema
 module.exports = mongoose.model('Products', productSchema);

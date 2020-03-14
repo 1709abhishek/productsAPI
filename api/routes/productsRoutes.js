@@ -2,6 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
+//importing the model
 const productController = require('../controllers/productsController');
 
 console.log('router loaded');

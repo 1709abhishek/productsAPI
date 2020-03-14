@@ -45,7 +45,7 @@ module.exports.delete = function(req, res) {
     });
 };
 
-//controller function for updating the products
+//controller function for updating the products, a sample function
 module.exports.update = function(req, res) {
     Products.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, product) {
       if (err)
