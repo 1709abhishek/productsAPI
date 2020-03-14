@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+
+// mongoose instance connection url connection
 mongoose.connect('mongodb://localhost/productsdb');
 
 const db = mongoose.connection;

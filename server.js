@@ -8,8 +8,7 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const CustomMware = require('./config/middleware');
 
-
-// mongoose instance connection url connection
+// body parser for req.body.params
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
