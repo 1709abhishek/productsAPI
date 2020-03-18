@@ -46,10 +46,23 @@ module.exports.delete = function(req, res) {
 };
 
 //controller function for updating the products, a sample function
-module.exports.update = function(req, res) {
-    Products.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, function(err, product) {
+module.exports.update = function(req, res, query) {
+    Products.findOneAndUpdate({_id: req.params.id}, {new: true}, function(err, product) {
+        // Product found. Update  the quantity.
+        product.quantity = Number(product.quantity) + Number(req.query.number);
+        product.save(function (error, product) {
+            if (error) {
+              console.log(error);
+            //   return res.send('Device update failed', error);
+            }
+            console.log('save was successful ? => \n', product);
+            // return res.send(error, product);
+          });
       if (err)
         res.send(err);
-      res.json(product);
+        return res.json(200,{
+            message: "product updated successfully",
+            product: product
+        });
     });
   };

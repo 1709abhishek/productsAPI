@@ -18,6 +18,6 @@ router.get('/products',productController.list);
 router.delete('/products/:id',productController.delete);
 
 //router for updating the product
-router.post('/products/:id/update_quantity/?number=10',productController.update);
+router.post('/products/:id/update_quantity',productController.update);
 
 module.exports = router;
